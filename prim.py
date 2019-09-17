@@ -2,8 +2,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Algortimo de Prim, retorn a MST
-
 
 def prim(Z, r):
     LAMBDA = []
@@ -42,7 +40,8 @@ def prim(Z, r):
     return H
 
 
-# Cria um grafo de teste
+# Cria um grafo de teste que resultara na imagem PNG
+
 G = nx.Graph()
 G.add_node("A")
 G.add_node("B")
@@ -54,27 +53,31 @@ G.add_node("G")
 G.add_node("H")
 G.add_node("I")
 
-# adiciona as arestas com peso
-G.add_edge("A", "B", value=4)
-G.add_edge("B", "C", value=8)
-G.add_edge("C", "D", value=7)
-G.add_edge("D", "E", value=9)
-G.add_edge("E", "F", value=10)
-G.add_edge("F", "G", value=2)
-G.add_edge("H", "I", value=7)
-G.add_edge("I", "C", value=2)
-G.add_edge("H", "A", value=8)
-G.add_edge("B", "H", value=11)
-G.add_edge("D", "F", value=14)
-G.add_edge("I", "G", value=6)
-G.add_edge("F", "C", value=4)
-G.add_edge("H", "G", value=1)
+# Adiciona as arestas com peso que desejar
 
-# desenha o grafo inicial
+G.add_edge("A", "B", value=6)
+G.add_edge("B", "C", value=4)
+G.add_edge("C", "D", value=5)
+G.add_edge("D", "E", value=10)
+G.add_edge("E", "F", value=11)
+G.add_edge("F", "G", value=4)
+G.add_edge("H", "I", value=3)
+G.add_edge("A", "F", value=1)
+G.add_edge("B", "H", value=8)
+G.add_edge("D", "A", value=12)
+G.add_edge("I", "C", value=15)
+G.add_edge("G", "C", value=16)
+G.add_edge("C", "F", value=14)
+G.add_edge("H", "G", value=7)
+
+# Desenha o grafo inicial
+
 pos = nx.spring_layout(G)
 nx.draw_networkx_nodes(G, pos)
 nx.draw_networkx_edges(G, pos)
-# Coloca na imagem o peso total
+
+# Coloca na imagem
+
 plt.text(0, 1, str(G.size(weight='value')), fontdict=None)
 plt.savefig("Graph1.png", format="PNG")
 plt.show()
