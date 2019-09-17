@@ -13,7 +13,7 @@ Usando as bibliotecas NetworkX, Numpy e matplotlib, implementei o Algoritmo de P
 ## Instalação 
 **Linguagem**: Python 3
 
-Para rodar o programa bastar utilizar o ![Colab Google](https://colab.research.google.com/)
+Para rodar o programa bastar utilizar o [Colab Google](https://colab.research.google.com/)
 
 ## Uso 
 Basta criar um grafo como o do exemplo, adicionar as arestas e os pesos.
